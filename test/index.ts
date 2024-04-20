@@ -21,7 +21,34 @@ import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import { DEFAULT_ADMONITION_TYPES, remarkAdmonition } from '../src/index.js'
 
-test(`remarkAdmonition works`, () => {
+test(`remarkAdmonition works without options`, () => {
+  const html = String(
+    unified()
+      .use(remarkParse)
+      .use(remarkDirective)
+      .use(remarkAdmonition)
+      .use(remarkRehype)
+      .use(rehypeStringify).processSync(`
+# Hello World!
+
+:::note
+Be careful folks!
+:::
+
+:::fyi[**title** time]
+Wowowow!
+:::
+    `),
+  )
+
+  expect(html).toMatchInlineSnapshot(`
+"<h1>Hello World!</h1>
+<div data-admonition-name="note" data-admonition-label="Note" role="note"><p>Be careful folks!</p></div>
+<div><p><strong>title</strong> time</p><p>Wowowow!</p></div>"
+`)
+})
+
+test(`remarkAdmonition works with options`, () => {
   const html = String(
     unified()
       .use(remarkParse)
