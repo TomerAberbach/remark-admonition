@@ -9,11 +9,14 @@
   <a href="https://github.com/TomerAberbach/remark-admonition/actions">
     <img src="https://github.com/TomerAberbach/remark-admonition/workflows/CI/badge.svg" alt="CI" />
   </a>
-  <a href="https://unpkg.com/remark-admonition/dist/index.min.js">
+  <a href="https://unpkg.com/remark-admonition/dist/index.js">
     <img src="https://deno.bundlejs.com/?q=remark-admonition&badge" alt="gzip size" />
   </a>
-  <a href="https://unpkg.com/remark-admonition/dist/index.min.js">
+  <a href="https://unpkg.com/remark-admonition/dist/index.js">
     <img src="https://deno.bundlejs.com/?q=remark-admonition&config={%22compression%22:{%22type%22:%22brotli%22}}&badge" alt="brotli size" />
+  </a>
+  <a href="https://github.com/sponsors/TomerAberbach">
+    <img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="Sponsor" />
   </a>
 </div>
 
@@ -30,12 +33,12 @@ $ npm i remark-admonition
 ## Usage
 
 ```js
-import { DEFAULT_ADMONITION_TYPES, remarkAdmonition } from 'remark-admonition'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkDirective from 'remark-directive'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
+import { DEFAULT_ADMONITION_TYPES, remarkAdmonition } from 'remark-admonition'
 
 console.log(
   unified()
@@ -102,11 +105,9 @@ Stars are always welcome!
 For bugs and feature requests,
 [please create an issue](https://github.com/TomerAberbach/remark-admonition/issues/new).
 
-For pull requests, please read the
-[contributing guidelines](https://github.com/TomerAberbach/remark-admonition/blob/main/contributing.md).
-
 ## License
 
-[Apache License 2.0](https://github.com/TomerAberbach/remark-admonition/blob/main/license)
-
-This is not an official Google product.
+[MIT](https://github.com/TomerAberbach/remark-admonition/blob/main/license-mit)
+© [Tomer Aberbach](https://github.com/TomerAberbach) \
+[Apache 2.0](https://github.com/TomerAberbach/remark-admonition/blob/main/license-apache) ©
+[Google](https://github.com/TomerAberbach/remark-admonition/blob/main/notice-apache)
